@@ -1,6 +1,10 @@
 ---
 // Component Imports
-import Tour from '../components/Tour.astro';
+import Main from '../layouts/Main.astro';
+import About from '../components/About.astro';
+import Contact from '../components/Contact.astro';
+import Header from '../components/Header.astro';
+import Card from '../components/Card.astro';
 // You can import components from any supported Framework here!
 /* ASTRO:COMPONENT_IMPORTS */
 
@@ -8,49 +12,20 @@ import Tour from '../components/Tour.astro';
 // You can write any JavaScript/TypeScript that you'd like here.
 // It will run during the build, but never in the browser.
 // All variables are available to use in the HTML template below.
-let title = 'My Astro Site';
 
 // Full Astro Component Syntax:
 // https://github.com/snowpackjs/astro/blob/main/docs/core-concepts/astro-components.md
 ---
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{title}</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="stylesheet" href="/style/global.css">
-    <link rel="stylesheet" href="/style/home.css">
-
-    <style>
-        header {
-            display: flex;
-            flex-direction: column;
-            gap: 1em;
-            max-width: min(100%, 68ch);
-        }
-    </style>
-</head>
-<body>
-    <main>
-        <header>
-            <div>
-                <img width="60" height="80" src="/assets/logo.svg" alt="Astro logo">
-                <h1>Welcome to <a href="https://astro.build/">Astro</a></h1>
-            </div>
-        </header>
-
-        <Tour />
-
-        <!--
-           - You can also use imported framework components directly in your markup!
-           -
-           - Note: by default, these components are NOT interactive on the client.
-           - The `:visible` directive tells Astro to make it interactive.
-           -
-           - See https://github.com/snowpackjs/astro/blob/main/docs/core-concepts/component-hydration.md 
-           -->
-        <!-- ASTRO:COMPONENT_MARKUP -->
-    </main>
-</body>
-</html>
+<Main>
+    <div class="sm:container md:flex md:flex-col mx-auto p-4">
+        <Header />
+        <div class="sm:flex sm:flex-col md:grid md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-1 md:gap-4 md:m-4">
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+        </div>
+        <About />
+        <Contact />
+    </div>
+</Main>
