@@ -1,0 +1,13 @@
+---
+const { 
+    name = 'some project',
+    project_url = '/',
+    description = 'some verbiage for the project'
+} = Astro.props;
+---
+<div class="rounded overflow-hidden shadow-lg m-4 h-20 md:w-72 md:h-44 lg:w-full">
+    <div class="text-center font-semibold text-pale-violet-red">
+        <a href="{ project_url }">{ name } </a>
+    </div>
+    <p class="prose m-1">{ description }</p>
+</div>
