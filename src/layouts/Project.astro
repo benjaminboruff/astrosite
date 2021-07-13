@@ -1,5 +1,7 @@
 ---
-let title = 'Ben Boruff';
+import Project from '../components/Project.astro';
+const { content } = Astro.props;
+let title = 'Ben Boruff | Projects';
 ---
 <html lang="en">
 <head>
@@ -11,7 +13,7 @@ let title = 'Ben Boruff';
 </head>
 <body class="text-gray-900 font-sans antialiased leading-tight bg-gradient-to-r from-green-300 via-lime-300 to-orange-300 min-h-screen">
     <main>
-        <slot />
+        <Project name = { content.name} description = { content.description } project_url = { content.project_url }/>
     </main>
 </body>
 </html>

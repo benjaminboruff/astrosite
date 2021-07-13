@@ -1,0 +1,14 @@
+---
+const { 
+    name = 'default project name',
+    project_url = '/',
+    description = 'default description '
+} = Astro.props;
+---
+<div class="">
+    <div class="text-center">
+        <a href="{ project_url }">{ name }</a>
+    </div>
+    <hr>
+    <p class="prose">{ description }</p>
+</div>
